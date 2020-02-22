@@ -1,0 +1,257 @@
+﻿@font-face {
+  font-family: "Lato";
+  src: local("Lato-Bold"), local("Lato Bold"),
+  url("assets/fonts/Lato-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: local("Lato-Black"), local("Lato Black"),
+  url("assets/fonts/Lato-Black.ttf");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src:local("Lato-Light"), local("Lato Light"),
+  url("assets/fonts/Lato-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: local("Lato-Regular"), local("Lato Regular"),
+  url("assets/fonts/Lato-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Lato", "AdobeInvisFont", "MyriadPro-Regular", sans-serif; 
+  font-weight: 400;
+  font-size: 10px;
+  text-align: justify;
+  color: #ffffff;
+}
+
+body {
+  min-width: 1200px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*~~~~~~~~~~~HEADER-BLOCK~~~~~~~~~~~*/
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  box-sizing: border-box;
+  width: 1020px;
+  height: 100%;
+  padding: 0 40px 0 40px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 89px;
+  background-color: #2d303a;
+  border-bottom: 6px solid #323746;
+  font-weight: 700;
+}
+
+.header .wrapper {
+  text-transform: uppercase;
+}
+
+.logo_colored {
+  color: #f06c64;
+}
+
+.logo h1 {
+  font-size: 2.5rem;
+  line-height: 1em;
+  letter-spacing: -0.05rem;
+}
+
+.header__navigation {
+  margin-top: 0.96%;
+}
+
+.navigation {
+  display: flex;
+  font-size: 1.15rem;
+  list-style-type: none;
+}
+
+.dot {
+  width: 0.174em;
+  height: 0.174em;
+  margin: auto 1.26em;
+  background-color: #494e62;
+  border-radius: 50%;
+}
+
+.item_colored {
+  color: #f06c64;
+}
+
+.navigation__item:hover {
+  text-decoration: underline;
+}
+
+/*~~~~~~~~~~~SLIDER-BLOCK~~~~~~~~~~~*/
+
+.slider {
+  height: 594px;
+  background-color: #f06c64;
+  border-bottom: 6px solid #ea676b;
+}
+
+.slider .wrapper {
+  padding: 53px 40px 58px 42px;
+}
+
+.slider__button {
+  display: flex;
+}
+
+.button {
+  width: 16px;
+  height: 27px;
+  background: url("assets/img/chev.svg") no-repeat;
+  border: 0;
+}
+
+.slider-phones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 837px;
+  padding: 0 55px 0 54px;
+}
+
+.slider-phones > div {
+  display: inline-flex;
+}
+
+.slider-phones__horizontal {
+  margin-top: -0.1%;
+}
+
+.button_reflect {
+  transform: scale(-1,1);  
+}
+
+.button:hover {
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: inset 0px 0px 10px -1px rgba(0,0,0,0.75);
+}
+
+/*~~~~~~~~~~~SERVICES-BLOCK~~~~~~~~~~~*/
+
+.services {
+  height: 494px;
+  background-color: #f2f2f2;
+  border-bottom: 6px solid #ffffff;  
+}
+
+.services .wrapper {
+  flex-direction: column;
+  justify-content: end;
+  align-items: baseline;
+  color: #666d89;
+}
+
+.services .wrapper div {
+  display: inline-flex;
+}
+
+h2, h3, p, {
+  display: inline-flex;
+  line-height: 1;
+}
+
+.title {
+  flex-direction: column;
+  padding-top: 6.25%;
+}
+
+.title h2 {
+  font-weight: 900;
+  font-size: 3rem;
+  letter-spacing: -0.006em;
+}
+
+.title p {
+  overflow: hidden;
+  margin-top: 1.92%;
+  height: 60px;
+  color: #767e9e;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.7em;
+}
+
+.layout-3-column {
+  justify-content: center;
+  padding-left: 1px;
+}
+
+.tool {
+  height: 89px;
+  padding-right: 20px;
+}
+
+.icon {
+  width: 79.5px;
+  padding-top: 4px;
+}
+
+.icon img {
+  width: 60px;
+  height: 59px;
+}
+
+.text {
+  flex-direction: column;
+}
+
+.text h3 {
+  font-weight: 900;
+  font-size: 1.8rem;
+  letter-spacing: -0.01em;
+}
+
+.text p {
+  overflow: hidden;
+  padding-top: 8px;
+  width: 220px;
+  font-size: 1.2rem;
+  line-height: 1.8em;
+  color: #767e9e;
+}
+
+.title + .layout-3-column {
+  margin-top: 4.62%;
+  margin-bottom: 3.6%;
+}
+
+.third h3 {
+  padding-left: 0.9%;
+}
+
+
