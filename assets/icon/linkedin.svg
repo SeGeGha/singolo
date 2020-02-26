@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" width="35" height="35">
+	<defs>
+		<image width="35" height="35" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAD8klEQVRYR82YTWgTURDH522iNtDSqhcVlOTirVrxovhVj0LBelARrERNqsREt4ImxYPxIM1WkLSJQZOowQpSPVhB8Gj8Ai9itTcPpiioF6HSQCxJ3jibZMOaZjfbJEoWlgSy781v/zPzZiYMWuhiS2E54ZbWCQLrY4i7aV033Rvo7irtMUefX+ieQcZeco5P74S935ayvyEYh0faJgCICHAYAZ8AZ0lgfDqXg9nEzeFZ2aD99IjVbAYroNADAvYyYPtp80kOEIyHvG+NQOnCHDz40NS1JhUExAGCCObSC8FEwi8rUPOy2/1d5vYVIkGJwNjE3A+b+OjRobzeQk0Yx7lrmxjn9xBJgfSCaBSi0lgBqqMtQVBWFIRj8bELH7WAqsIMng3sRGRPkYM/fsMbrCmDgQccZySRCeBnDPui477X1ZYsghl0B7opAF8BcDEWGk4YsGP4EadnxA4gBCkBdkXDvpnKhYtgnB7pHSky0SxFKg2WFBqIhbxbdWGcZwPXkeOqeHiY3uDfXQ5PYIox+Bwb951XWykrc8oT2MwRXmTTv631BqtRfDmol7W3zQoM9twK+T4o68owTk/gNiJ+JVX81TZ1uqX3wKCHfpvNmpZvSQSHDKW4FqDDPULBzNbHQr6Tf8G4XP72rMnyKzufWa2lCsUSnXnFi9J9L0EnjSpR7bmCOh2Wn8vymc5IxJ+Wnyko4/CMHqHsORwP+fq1DKiUmSNlbI0qU7QbmKLsmoyHLj5Qw0SA46daGUTS9jaqiPpl5cwCgW0kGFcZhlzwhqS/pGeo0k2FxUx4XvyEK4DQSX4UVf4PRkPeIT1Xyi9He1ylNN+hUkb6nsvy7UrRqxrAFTGjhqHvcjAr1bu8XIaMjnv9mq53Xe1Bk/kZFdK1amVyRGfWews9ZUrrCAgpBpgcd+W2gvZdWWPfsu1CAJOhhmGUDBt0S/3I4LECQDC6nYHadimbpO8sn9sXi1ya1pRU302gGD0tjljzeSFlBMap4aaGAlg2rFZA7VI9ZTQCeLRmateKmbpgqqW2oUPPoJtKMVg+rXWVqXbo1VMOKlJ7yW7SLAfFt6lRKJusjGahlGHkFiIPLJmbz9j+Rwth7rCkTIC9VVuIgjrUXNEYYouFvQf0DqpGf6Oi+5jGmZRmc6UYaJm2UwZqqYa8AFQaVTji5dth31ijbpHXO9zSZSqcQ0saVRTDyhBHrUEqm84crzeoi/2u5S61cba6hjgFSBlv6QQ7SlA03mbGjEIVx1vLOYKgERfuNzTeql2jHvwJaooDJnmeT5sZ/lKKq1z0csg6BZPQIwDrJYj+pg7+lbHSEn+JNCOAjexh6P8ZIxs145k/62BfQlkylCwAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="About Us">
+		<g id="Social Media">
+			<g id="LinkedIn">
+				<use id="Ellipse 2 copy 3" href="#img1" transform="matrix(1,0,0,1,0,0)"/>
+			</g>
+		</g>
+	</g>
+</svg>
