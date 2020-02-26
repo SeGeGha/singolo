@@ -152,26 +152,31 @@ a {
   color: #2d303a;
 }
 
-.layout-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.portfolio .layout-4-column {
   margin-top: 19px;
-  height: 621px;
-  overflow: hidden;
 }
 
 .layout-4-column {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  padding-bottom: 20px;
+  flex-wrap: wrap; 
+  height: 601px;
   width: 940px;
-  height: 187px;
+  overflow: hidden;
+}
+
+.layout-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 220px;
+  height: 100%;
 }
 
 .project-image {
-  width: 220px;
-  height: 100%;
+  width: 100%;
+  height: 187px;
   position: relative;
   overflow: hidden;
 }
