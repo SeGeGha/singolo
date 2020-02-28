@@ -125,6 +125,7 @@ a {
   margin-right: 8px;
   letter-spacing: 0.04545em;
   transition: background-color 1s;
+  outline: none;
 }
 
 .buttons__sort:nth-child(2){
@@ -335,23 +336,19 @@ a {
   flex-direction: row;
   justify-content: space-between;
   width: 156px;
-  height: 35px;  
+  height: 35px;
 }
 
-.contacts-block {
-  width: 35px;
-  height: 100%;
+.member-contacts img:hover {
+  cursor: pointer;
+  border-bottom: 2px dotted;
+  transition: border-bottom 0.3s;
 }
 
 .member:last-child .member-contacts{
   margin-left: -1px;
 }
 
-.contacts-block:hover {
-  cursor: pointer;
-  border-bottom: 2px dotted;
-  transition: border-bottom 0.3s;
-}
 
 
 
