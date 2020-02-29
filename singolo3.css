@@ -75,12 +75,13 @@ a {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  padding-top: 62px;
+  padding-bottom: 13px;
   color: #f0d8d9;
 }
 
 .get-quote .title {
   flex-direction: column;
-  padding: 6.6% 0 4.7% 0;
 }
 
 /*В синголо 1 есть*/
@@ -110,6 +111,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
   width: 940.5px;
+  padding-top: 44px;
 }
 
 .form {
@@ -159,6 +161,7 @@ a {
 .input_submit:hover {
   cursor: pointer;
   color: #f0d8d9;
+  font-weight: 900;
   border: 1px groove;
 }
 
@@ -219,6 +222,7 @@ textarea::placeholder {
 
 .adres__row a:hover {
   color: darkred;
+  font-weight: 900;
 }
 
 .adres__row:nth-child(2) {
@@ -231,14 +235,15 @@ img[alt="Email"] {
 
 /*~~~~~~~~~~~FOOTER-BLOCK~~~~~~~~~~~*/
 .footer {
-  background: #2d303a;
-  height: 76px;  
+  background: #2d303a; 
 }
 
 .footer .wrapper {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-top: 21px;
+  padding-bottom: 20px;
   font-size: 1.2rem;
   color: #5b6179; 
 }
