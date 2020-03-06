@@ -398,7 +398,6 @@ img[alt="Star"] {
 .layout-4-column {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   flex-wrap: wrap; 
   height: 601px;
   width: 940px;
@@ -406,11 +405,16 @@ img[alt="Star"] {
 }
 
 .project-image {
+  margin-right: 20px;
   margin-bottom: 20px;
   width: 220px;
   height: 187px;
   position: relative;
   overflow: hidden;
+}
+
+.project-image:nth-child(4n+4) {
+  margin-right: 0;
 }
 
 .project-image > img {
@@ -564,9 +568,11 @@ img[alt="Star"] {
 .member-contacts {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 156px;
   height: 35px;
+}
+
+.member-contacts img {
+  margin-right: 5px;
 }
 
 .member-contacts img:hover {
@@ -678,6 +684,12 @@ textarea::placeholder {
   color: #f48c8f;
 }
 
+.form__input:focus:invalid {
+  color: maroon;
+  border: 1px solid maroon;
+  text-decoration: line-through; 
+}
+
 .information {
   width: 300px;
 }
@@ -760,6 +772,6 @@ textarea::placeholder {
   letter-spacing: -0.0125em;
 }
 
-.contacts-wrapper {
-  margin-right: -3px;
+.footer .contacts-wrapper {
+  margin-right: -7px;
 }
