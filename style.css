@@ -686,8 +686,17 @@ textarea::placeholder {
 
 .form__input:focus:invalid {
   color: maroon;
-  border: 1px solid maroon;
-  text-decoration: line-through; 
+  border: 2px solid darkred;
+}
+
+.form__input:focus:valid {
+  border: 2px solid darkolivegreen;
+}
+
+.form__input:hover,
+.form__textarea:hover {
+  background-color: #cd5b45;
+  cursor: pointer;
 }
 
 .information {
@@ -759,19 +768,12 @@ textarea::placeholder {
 
 .footer .wrapper {
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 21px;
-  padding-bottom: 20px;
+  padding: 21px 33px 20px 42px;
   font-size: 1.2rem;
   color: #5b6179; 
 }
 
 .footer__copyright {
-  margin: -1.5px 0 0 2px;
+  margin-top: -1.5px;
   letter-spacing: -0.0125em;
-}
-
-.footer .contacts-wrapper {
-  margin-right: -7px;
 }

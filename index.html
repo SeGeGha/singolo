@@ -246,7 +246,7 @@
         <p class="quote__paragraph">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
       </div>
       <div class="form-information">
-        <form action="#get-quote" method="get" class="form">
+        <form action="#get-quote" method="get" class="form" autocomplete="off">
           <input type="text" name="user-name" class="form__input" placeholder="Name (Required)" pattern="[A-Za-z' -]+" required>
           <input type="email" name="user-email" class="form__input" placeholder="Email (Required)" required>
           <input type="text" name="subject" class="form__input" placeholder="Subject">
@@ -258,10 +258,12 @@
           <p class="information__paragraph">Quisque hendrerit purus dapibus, ornare nibh vitae, viver&shy;ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. </p>
           <div class="information__adres">
             <div class="adres__row">
-              <span class="img-wrapper">
-                <img src="assets/icon/location@1X.png" alt="Location" class="adres__logo">
-              </span>
-              <p>Elm St. 14/05 Lost City</p>   
+              <a href="#">
+                <span class="img-wrapper">
+                  <img src="assets/icon/location@1X.png" alt="Location" class="adres__logo">
+                </span>
+                <p>Elm St. 14/05 Lost City</p>   
+              </a>
             </div>
             <div class="adres__row"> 
               <a href="tel:+035283318635">
@@ -287,14 +289,12 @@
   <footer class="footer">
     <div class="wrapper">
       <span class="footer__copyright">&copy; Copyright 2013</span>
-      <div class="contacts-wrapper">
-        <div class="member-contacts">
-          <img src="assets/icon/facebook.svg" alt="Facebook">
-          <img src="assets/icon/google+.svg" alt="Google">
-          <img src="assets/icon/twitter.svg" alt="Twitter">
-          <img src="assets/icon/linkedin.svg" alt="Linkedin">
-        </div>
-      </div> 
+      <div class="member-contacts">
+        <img src="assets/icon/facebook.svg" alt="Facebook">
+        <img src="assets/icon/google+.svg" alt="Google">
+        <img src="assets/icon/twitter.svg" alt="Twitter">
+        <img src="assets/icon/linkedin.svg" alt="Linkedin">
+      </div>
     </div>
   </footer>
 </body>
