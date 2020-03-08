@@ -51,10 +51,6 @@ html {
   color: #ffffff;
 }
 
-body {
-  min-width: 1200px;
-}
-
 a {
   text-decoration: none;
   color: inherit;
