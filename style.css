@@ -112,20 +112,17 @@ a {
   font-size: 0.6rem;
   color: rgb(73,78,98);
   text-align: center;  
-}
-
-.navigation__item a {
   letter-spacing: -0.3px;
   transition: all 0.2s;
 }
 
-.item_colored {
+.item_active {
   color: #f06c64;
 }
 
-.navigation__item a:hover {
-  border-bottom: 1px ridge;
-  border-top: 1px ridge;
+.navigation__item:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 /*~~~~~~~~~~~SLIDER-BLOCK~~~~~~~~~~~*/
@@ -380,7 +377,7 @@ img[alt="Star"] {
   margin-right: 0;  
 }
 
-.button_selected {
+.button_active {
   color: #c5c5c5;
   border-color: #c5c5c5;
 }
@@ -400,8 +397,10 @@ img[alt="Star"] {
   flex-direction: row;
   flex-wrap: wrap; 
   height: 601px;
-  width: 940px;
+  width: 960px;
   overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 
 .project-image {
@@ -411,10 +410,16 @@ img[alt="Star"] {
   height: 187px;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  transition: border 0.2s;
 }
 
-.project-image:nth-child(4n+4) {
-  margin-right: 0;
+.project-image:hover {
+  cursor: pointer;
+}
+
+.image_active {
+  border: 5px solid #F06C64;
 }
 
 .project-image > img {
