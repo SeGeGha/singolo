@@ -3,7 +3,10 @@
 let navigation = document.querySelector('.navigation');
 
 navigation.addEventListener('click', (event) => {
+  let nameScrollSection = event.target.innerText.toLowerCase();
+
   addActiveClass(navigation, 'li', 'item_active', event.target);
+  document.querySelector(`#${nameScrollSection}`).scrollIntoView({behavior: 'smooth', block: 'start'});
 });
 
 
@@ -39,7 +42,7 @@ function mixedImages() {
     portfolioImages.forEach( (item, index) => {
       item.style.order = (item.style.order != '') ? portfolioImages.length - item.style.order : portfolioImages.length - index;
     });  
-    
+
     portfolioImages.forEach (item => item.classList.remove('image_active'));
           
     portfolio.style.opacity = 1
