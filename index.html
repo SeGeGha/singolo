@@ -236,13 +236,21 @@
         <p class="quote__paragraph">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
       </div>
       <div class="form-information">
-        <form action="#get-quote" method="get" class="form" autocomplete="off">
-          <input type="text" name="user-name" class="form__input" placeholder="Name (Required)" pattern="[A-Za-z' -]+" required>
+        <form action="" method="get" class="form" autocomplete="off" onsubmit="return false">
+          <input type="text" name="user-name" class="form__input" placeholder="Name (Required)" required>
           <input type="email" name="user-email" class="form__input" placeholder="Email (Required)" required>
           <input type="text" name="subject" class="form__input" placeholder="Subject">
           <textarea name="subject-text" class="form__textarea" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
           <input type="submit" name="submit" class="form__input input_submit" value="Submit">
         </form>
+        <div class="popup__overlay popup_hidden">
+          <div class="popup">
+            <span class="popup__title">Письмо отправлено</span>
+            <span class="popup__subject">Без темы</span>
+            <span class="popup__describe">Без описания</span>  
+            <button class="popup__button">ok</button>
+          </div>          
+        </div>
         <div class="information">
           <h3 class="information__title">Contact Information</h3>
           <p class="information__paragraph">Quisque hendrerit purus dapibus, ornare nibh vitae, viver&shy;ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. </p>

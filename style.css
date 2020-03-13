@@ -343,8 +343,8 @@ img[alt="Star"] {
 }
 
 .buttons {
-  padding-top: 11px;
-  padding-left: 1px;
+  margin-top: 11px;
+  margin-left: 1px;
 }
 
 .buttons__sort {
@@ -484,6 +484,10 @@ img[alt="Star"] {
 .image__photo-frame { 
   top: -60px;
   left: -36px;  
+}
+
+.portfolio_hidden {
+  opacity: 0;
 }
 
 /*~~~~~~~~~~~ABOUT US-BLOCK~~~~~~~~~~~*/
@@ -689,18 +693,62 @@ textarea::placeholder {
   color: #f48c8f;
 }
 
-.form__input:focus:invalid {
+.input_invalid {
   color: maroon;
   border: 2px solid darkred;
-}
-
-.form__input:focus:valid {
-  border: 2px solid darkolivegreen;
 }
 
 .form__input:hover,
 .form__textarea:hover {
   background-color: #cd5b45;
+  cursor: pointer;
+}
+
+.popup__overlay {
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: block;
+}
+
+.popup_hidden {
+  display: none;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  min-height: 180px;
+  font-size: 1.6rem;
+  color: #666d89;
+  background: #f2f2f2;
+  box-shadow: 1px 0px 10px rgb(125, 125, 125);
+  margin: 100px auto;
+  border-radius: 15px;
+}
+
+.popup > span {
+  margin: 10px;
+}
+
+.popup__title {
+  text-align: center;
+  font-weight: 700;
+  border-bottom: 1px solid;
+}
+
+.popup__button {
+  margin: 20px auto 0px;
+  width: 100px;
+  text-transform: uppercase;
+}
+
+.popup__button:hover {
   cursor: pointer;
 }
 
