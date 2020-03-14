@@ -1,3 +1,4 @@
+window.addEventListener('load', () => {
 /*HEADER SCROLL AND ADD/REMOVE CLASS ACTIVE*/
 
 let navigation = document.querySelector('.navigation');
@@ -11,6 +12,69 @@ navigation.addEventListener('click', (event) => {
 
 
 /*SLIDER*/
+let phones = document.querySelectorAll('.phone');
+let carousel = document.querySelector('.carousel')
+let slides = carousel.querySelectorAll('.slide');
+let currentSlide = 0;
+let isEnabled = true;
+
+function changeCurrentSlide(n) {
+  currentSlide = (n + slides.length) % slides.length;
+  (carousel.classList.contains('carousel_colored')) ? carousel.classList.remove('carousel_colored')
+                                                    : carousel.classList.add('carousel_colored');
+}
+
+function hideSlide(direction) {
+  isEnabled = false;
+  slides[currentSlide].classList.add(direction);
+  slides[currentSlide].addEventListener('animationend', function() {
+    this.classList.remove('slide_active', direction);
+  });
+}
+
+function showSlide(direction) {
+  slides[currentSlide].classList.add('slide_next', direction);
+  slides[currentSlide].addEventListener('animationend', function() {
+    this.classList.remove('slide_next', direction);
+    this.classList.add('slide_active');
+    isEnabled = true;
+  });
+}
+
+function previousSlide(n) {
+  hideSlide('to-left');
+  changeCurrentSlide(currentSlide - 1);
+  showSlide('from-right');
+}
+
+function nextSlide(n) {
+  hideSlide('to-right');
+  changeCurrentSlide(currentSlide + 1);
+  showSlide('from-left');
+}
+
+document.querySelector('.button_left').addEventListener('click', function() {
+  if(isEnabled) {
+    previousSlide(currentSlide);
+  }
+})
+
+document.querySelector('.button_right').addEventListener('click', function() {
+  if(isEnabled) {
+    nextSlide(currentSlide);
+  }
+})
+
+
+
+phones.forEach(item => {
+  item.addEventListener('click', (event) => {
+    let screen = event.target.parentElement.querySelector('.phone-screen');
+    (!screen.classList.contains('screen_off')) ? screen.classList.add('screen_off') 
+                                               : screen.classList.remove('screen_off');  
+  })
+})
+
 
 
 /*PORTFOLIO ADD/REMOVE CLASS ACTIVE AND MIX IMAGE*/
@@ -90,11 +154,6 @@ popup.querySelector('button').addEventListener('click', (event) => {
   popup.parentElement.classList.add('popup_hidden');
 })
 
-
-
-
-
-
 /*FUNCTION*/
 
 
@@ -103,3 +162,4 @@ function addActiveClass(element, selector, className, targetElement) {
   targetElement.classList.add(className);
 }
 
+})
