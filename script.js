@@ -87,11 +87,8 @@ document.querySelector('.button_right').addEventListener('click', function() {
 phones.forEach(item => {
   item.addEventListener('click', (event) => {
     let screen = event.target.parentElement.querySelector('.phone-screen');
-    if (!screen.classList.contains('screen_off')) {
-      screen.classList.add('screen_off');
-    } else {
-      screen.classList.remove('screen_off'); 
-    }
+
+    screen.classList.toggle('screen_off')
   });
 });
 
@@ -157,22 +154,22 @@ form.querySelector('.input_submit').addEventListener('click', () => {
   checkInputValue(inputName, nameRegExp);
   checkInputValue(inputEmail, emailRegExp);
 
-  if (inputName.classList == 'form__input' && inputEmail.classList == 'form__input') {
+  if (!inputName.classList.contains('input_invalid') && !inputEmail.classList.contains('input_invalid')) {
     popup.parentElement.classList.remove('popup_hidden');
 
     if(formSubject.value !== '') {
-      popup.querySelector('.popup__subject').innerText = `Тема: ${formSubject.value}`;
+      popup.querySelector('.popup__subject').innerText = `Subject: ${formSubject.value}`;
     }
     if(formTextarea.value !== '') {
-      popup.querySelector('.popup__describe').innerText = `Описание: ${formTextarea.value}`;
+      popup.querySelector('.popup__describe').innerText = `Description: ${formTextarea.value}`;
     } 
   }
 });
 
 popup.querySelector('button').addEventListener('click', () => {
   [inputName, inputEmail, formSubject, formTextarea].forEach( item => item.value = '');
-  popup.querySelector('.popup__subject').innerText = 'Без темы';
-  popup.querySelector('.popup__describe').innerText = 'Без описания';
+  popup.querySelector('.popup__subject').innerText = 'Without subject';
+  popup.querySelector('.popup__describe').innerText = 'Without description';
   popup.parentElement.classList.add('popup_hidden');
 });
 
