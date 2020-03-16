@@ -1,27 +1,46 @@
 window.addEventListener('load', () => {
-/*HEADER SCROLL AND ADD/REMOVE CLASS ACTIVE*/
-
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~HEADER~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 let navigation = document.querySelector('.navigation');
+let header = document.querySelector('.header');
 
 navigation.addEventListener('click', (event) => {
   let nameScrollSection = event.target.innerText.toLowerCase();
 
   addActiveClass(navigation, 'li', 'item_active', event.target);
+    
   document.querySelector(`#${nameScrollSection}`).scrollIntoView({behavior: 'smooth', block: 'start'});
 });
 
+window.addEventListener('scroll', () => {
+  headerTransparency(window.pageYOffset, header.offsetHeight);
+});
 
-/*SLIDER*/
+function headerTransparency(offsetY, headerOffsetHeight) {
+  if(offsetY <= headerOffsetHeight) {
+    header.classList.remove('header_transparency');
+  } else {
+    header.classList.add('header_transparency');
+  }
+}
+
+document.querySelector('.logo').addEventListener('click', (event) => {
+  event.preventDefault();
+});
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CAROUSEL~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 let phones = document.querySelectorAll('.phone');
-let carousel = document.querySelector('.carousel')
+let carousel = document.querySelector('.carousel');
 let slides = carousel.querySelectorAll('.slide');
 let currentSlide = 0;
 let isEnabled = true;
 
 function changeCurrentSlide(n) {
   currentSlide = (n + slides.length) % slides.length;
-  (carousel.classList.contains('carousel_colored')) ? carousel.classList.remove('carousel_colored')
-                                                    : carousel.classList.add('carousel_colored');
+  if (carousel.classList.contains('carousel_colored')) {
+    carousel.classList.remove('carousel_colored');
+  }else {
+    carousel.classList.add('carousel_colored');
+  }
 }
 
 function hideSlide(direction) {
@@ -42,73 +61,73 @@ function showSlide(direction) {
 }
 
 function previousSlide(n) {
-  hideSlide('to-left');
-  changeCurrentSlide(currentSlide - 1);
-  showSlide('from-right');
+  hideSlide('to-right');
+  changeCurrentSlide(n - 1);
+  showSlide('from-left');
 }
 
 function nextSlide(n) {
-  hideSlide('to-right');
-  changeCurrentSlide(currentSlide + 1);
-  showSlide('from-left');
+  hideSlide('to-left');
+  changeCurrentSlide(n + 1);
+  showSlide('from-right');
 }
 
 document.querySelector('.button_left').addEventListener('click', function() {
   if(isEnabled) {
     previousSlide(currentSlide);
   }
-})
+});
 
 document.querySelector('.button_right').addEventListener('click', function() {
   if(isEnabled) {
     nextSlide(currentSlide);
   }
-})
-
-
+});
 
 phones.forEach(item => {
   item.addEventListener('click', (event) => {
     let screen = event.target.parentElement.querySelector('.phone-screen');
-    (!screen.classList.contains('screen_off')) ? screen.classList.add('screen_off') 
-                                               : screen.classList.remove('screen_off');  
-  })
-})
-
-
-
-/*PORTFOLIO ADD/REMOVE CLASS ACTIVE AND MIX IMAGE*/
-
-  let portfolioTages = document.querySelector('.buttons');
-  let portfolio = document.querySelector('.layout-4-column');
-  let portfolioImages = portfolio.querySelectorAll('div');  
-
-
-  portfolioTages.addEventListener('click', (event) => {
-    addActiveClass(portfolioTages, 'button', 'button_active', event.target);
-    mixedImages();
+    if (!screen.classList.contains('screen_off')) {
+      screen.classList.add('screen_off');
+    } else {
+      screen.classList.remove('screen_off'); 
+    }
   });
+});
 
-  portfolioImages.forEach (item => {
-    item.addEventListener('click', () => addActiveClass(portfolio, 'div', 'image_active', item));
-  })
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PORTFOLIO~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+let portfolioTages = document.querySelector('.buttons');
+let portfolio = document.querySelector('.layout-4-column');
+let portfolioImages = portfolio.querySelectorAll('div');  
+
+portfolioTages.addEventListener('click', (event) => {
+  addActiveClass(portfolioTages, 'button', 'button_active', event.target);
+  mixedImages();      
+});
+
+portfolioImages.forEach ( (item, index) => {
+  item.style.order = index;
+  item.addEventListener('click', () => addActiveClass(portfolio, 'div', 'image_active', item));
+});
 
 function mixedImages() {
   portfolio.classList.add('portfolio_hidden');
 
   setTimeout( () => {
-    portfolioImages.forEach( (item, index) => {
-      item.style.order = (item.style.order != '') ? portfolioImages.length - item.style.order : portfolioImages.length - index;
+    portfolioImages.forEach( (item) => {
+      let offsetImages = portfolioImages.length - 4;
+
+      item.style.order = (item.style.order < offsetImages) ? +item.style.order + 4 
+                                                           : item.style.order = item.style.order - offsetImages;
     });  
 
-    portfolioImages.forEach (item => item.classList.remove('image_active'));
-          
+    portfolioImages.forEach (item => item.classList.remove('image_active'));        
     portfolio.classList.remove('portfolio_hidden');
-  }, 350)
+  }, 350);
 }
 
-
-/*GET QUOTE POPUP*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~GET QUOTE POPUP~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 let form = document.querySelector('.form');
 let [inputName, inputEmail, formSubject] = form.querySelectorAll('input');
@@ -116,19 +135,22 @@ let formTextarea = form.querySelector('textarea');
 let popup = document.querySelector('.popup');
 
 let nameRegExp = /^(\s)*[A-Za-z]+((\s)?((\'|\-|\.)?([A-Za-z])+))*(\s)*$/;
-let emailRegExp = /^[A-Z0-9._%+-]+@[A-Z]{2,8}$/i;
+let emailRegExp = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/i;
 
 inputName.addEventListener('change', () => {
   checkInputValue(inputName, nameRegExp);
-})
+});
 
 inputEmail.addEventListener('change', () => {
   checkInputValue(inputEmail, emailRegExp);
-})
+});
 
 function checkInputValue(elem, reg) {
-  (reg.test(elem.value)) ? elem.classList.remove('input_invalid')
-                         : elem.classList.add('input_invalid');
+  if(reg.test(elem.value)) {
+    elem.classList.remove('input_invalid');   
+  } else {
+    elem.classList.add('input_invalid');   
+  }
 }
 
 form.querySelector('.input_submit').addEventListener('click', () => {
@@ -145,21 +167,20 @@ form.querySelector('.input_submit').addEventListener('click', () => {
       popup.querySelector('.popup__describe').innerText = `Описание: ${formTextarea.value}`;
     } 
   }
-})
+});
 
-popup.querySelector('button').addEventListener('click', (event) => {
+popup.querySelector('button').addEventListener('click', () => {
   [inputName, inputEmail, formSubject, formTextarea].forEach( item => item.value = '');
   popup.querySelector('.popup__subject').innerText = 'Без темы';
   popup.querySelector('.popup__describe').innerText = 'Без описания';
   popup.parentElement.classList.add('popup_hidden');
-})
+});
+
 
 /*FUNCTION*/
-
-
 function addActiveClass(element, selector, className, targetElement) {
   element.querySelectorAll(selector).forEach( item => item.classList.remove(className));
   targetElement.classList.add(className);
 }
 
-})
+});
