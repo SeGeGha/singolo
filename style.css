@@ -49,6 +49,7 @@ html {
   font-size: 10px;
   text-align: justify;
   color: #ffffff;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -60,9 +61,9 @@ a {
   color: inherit;
 }
 
-#home, #services,
-#about, #contact, #portfolio {
-  scroll-margin-top: 95px;
+#home, #services, #portfolio,
+#about, #contact {
+  scroll-margin-top: 94.5px;
 }
 
 .wrapper {
@@ -133,9 +134,9 @@ a {
   color: #f06c64;
 }
 
-.navigation__item:hover {
-  cursor: pointer;
-  opacity: 0.5;
+.navigation__item > a:hover {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
 }
 
 /*~~~~~~~~~~~SLIDER-BLOCK~~~~~~~~~~~*/
