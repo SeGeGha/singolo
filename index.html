@@ -6,15 +6,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header" id="header">
+  <header class="header">
     <div class="wrapper">
-      <a href="index.html" class="logo">
+      <a href="#" class="logo">
         <h1>singolo<span class="logo_colored">*</span></h1>
       </a>
       <nav class="header__navigation">
         <ul class="navigation">
-          <li class="navigation__item item_colored">
-            <a href="index.html">home</a>
+          <li class="navigation__item ">
+            <a href="#home" class="item_active">home</a>
           </li>
           <li class="navigation__item">
             <a href="#services">services</a>
@@ -23,30 +23,53 @@
             <a href="#portfolio">portfolio</a>
           </li>
           <li class="navigation__item">
-            <a href="#about-us">about</a>
+            <a href="#about">about</a>
           </li>
           <li class="navigation__item">
-            <a href="#get-quote">contact</a>
+            <a href="#contact">contact</a>
           </li>
         </ul>
       </nav>
     </div>  
   </header>
-  <section class="slider">
+  <section class="carousel" id="home">
     <div class="wrapper">
-      <div class="slider__button">
-        <button type="button" class="button"></button>
+      <div class="carousel__button">
+        <button type="button" class="button button_left"></button>
       </div>
-      <div class="slider-phones">
-        <div class="slider-phones__vertical">
-          <img src="assets/img/vertical-phone.png" alt="Vertical phone">
+      <div class="carousel-slides">
+        <div class="slide first-slide slide_active">
+          <div class="vertical-phone">
+            <img src="assets/img/phone-shadow.png" alt="Vertical phone shadow" class="phone-shadow">
+            <img src="assets/img/phone-body.png" alt="Vertical phone" class="phone phone-body">
+            <img src="assets/img/screen-1.png" alt="Screen vertical phone" class="phone phone-screen">
+          </div>
+          <div class="horizontal-phone">
+            <img src="assets/img/phone-shadow2.png" alt="Horizontal phone shadow" class="phone-shadow">
+            <img src="assets/img/phone-body2.png" alt="Horizontal phone" class="phone phone-body">
+            <img src="assets/img/screen-2.png" alt="Screen horizontal phone" class="phone phone-screen">
+          </div>          
         </div>
-        <div class="slider-phones__horizontal">
-          <img src="assets/img/horizontal-phone.png" alt="Horizontal phone">
+        <div class="slide second_slide">
+          <div class="vertical-phone back_phone">
+            <img src="assets/img/phone-shadow.png" alt="Vertical phone shadow" class="phone-shadow">
+            <img src="assets/img/phone-body.png" alt="Vertical phone" class="phone phone-body">
+            <img src="assets/img/screen-3.png" alt="Screen vertical phone" class="phone phone-screen">
+          </div>
+          <div class="vertical-phone ">
+            <img src="assets/img/phone-shadow.png" alt="Vertical phone shadow" class="phone-shadow">
+            <img src="assets/img/phone-body.png" alt="Vertical phone" class="phone phone-body">
+            <img src="assets/img/screen-3.png" alt="Screen vertical phone" class="phone phone-screen">
+          </div>
+          <div class="vertical-phone back_phone">
+            <img src="assets/img/phone-shadow.png" alt="Vertical phone shadow" class="phone-shadow">
+            <img src="assets/img/phone-body.png" alt="Vertical phone" class="phone phone-body">
+            <img src="assets/img/screen-3.png" alt="Screen vertical phone" class="phone phone-screen">
+          </div>                   
         </div>
       </div>
-      <div class="slider__button">
-        <button type="button" class="button button_reflect"></button>  
+      <div class="carousel__button">
+        <button type="button" class="button button_right button_reflect"></button>  
       </div>
     </div>
   </section>
@@ -132,53 +155,29 @@
         <h2 class="portfolio__title">Portfolio</h2>
         <p class="portfolio__paragraph">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
         <div class="buttons">
-          <button type="button" class="buttons__sort button_selected">All</button>
+          <button type="button" class="buttons__sort button_active">All</button>
           <button type="button" class="buttons__sort">Web Design</button>
           <button type="button" class="buttons__sort">Graphic Design</button>
           <button type="button" class="buttons__sort">Artwork</button>
         </div>
       </div>
       <div class="layout-4-column">
-        <div class="project-image">
-          <img src="assets/img/project1.png" alt="Ship" class="image__ship">
-        </div>
-        <div class="project-image">
-          <img src="assets/img/project2.png" alt="Girl ball with ice-cream" class="image__ball">
-        </div>  
-        <div class="project-image">
-          <img src="assets/img/project3.png" alt="Nightly city" class="image__city">
-        </div>
-        <div class="project-image">
-          <img src="assets/img/project4.png" alt="Robot" class="image__robot">
-        </div> 
-        <div class="project-image">
-          <img src="assets/img/project5.png" alt="Animals" class="image__animals">
-        </div>
-        <div class="project-image">
-          <img src="assets/img/project6.png" alt="Mockup" class="image__mockup">
-        </div>
-        <div class="project-image">
-          <img src="assets/img/project7.png" alt="Cyclops" class="image__cyclops">
-        </div>
-        <div class="project-image">
-          <img src="assets/img/project8.png" alt="Chickens" class="image__chickens">
-        </div> 
-        <div class="project-image">
-          <img src="assets/img/project9.png" alt="Monster-mountain" class="image__monster-mountain">
-        </div>
-        <div class="project-image">
-          <img src="assets/img/project10.png" alt="Title" class="image__title">
-        </div> 
-        <div class="project-image">
-          <img src="assets/img/project11.png" alt="White monster" class="image__white-monster">
-        </div> 
-        <div class="project-image">
-          <img src="assets/img/project12.png" alt="Photo frame" class="image__photo-frame">
-        </div>        
+        <div class="project-image image_ship"></div>
+        <div class="project-image image_ball"></div>  
+        <div class="project-image image_city"></div>
+        <div class="project-image image_robot"></div> 
+        <div class="project-image image_animals"></div>
+        <div class="project-image image_mockup"></div>
+        <div class="project-image image_cyclops"></div>
+        <div class="project-image image_chickens"></div> 
+        <div class="project-image image_monster-mountain"></div>
+        <div class="project-image image_title"></div> 
+        <div class="project-image image_white-monster"></div> 
+        <div class="project-image image_photo-frame"></div>        
       </div>                       
     </div>    
   </section> 
-  <section class="about-us" id="about-us">
+  <section class="about-us" id="about">
     <div class="wrapper">
       <div class="title">
         <h2 class="about-us__title">About Us</h2>
@@ -239,26 +238,34 @@
     </div>        
     </div> 
   </section>
-  <section class="get-quote" id="get-quote">
+  <section class="get-quote" id="contact">
     <div class="wrapper">
       <div class="title">
         <h2 class="quote__title">Get a Quote</h2>
         <p class="quote__paragraph">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
       </div>
       <div class="form-information">
-        <form action="#get-quote" method="get" class="form" autocomplete="off">
-          <input type="text" name="user-name" class="form__input" placeholder="Name (Required)" pattern="[A-Za-z' -]+" required>
+        <form action="#" method="get" class="form" autocomplete="off" onsubmit="return false">
+          <input type="text" name="user-name" class="form__input" placeholder="Name (Required)" required>
           <input type="email" name="user-email" class="form__input" placeholder="Email (Required)" required>
           <input type="text" name="subject" class="form__input" placeholder="Subject">
           <textarea name="subject-text" class="form__textarea" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
           <input type="submit" name="submit" class="form__input input_submit" value="Submit">
         </form>
+        <div class="popup__overlay popup_hidden">
+          <div class="popup">
+            <span class="popup__title">The letter was sent</span>
+            <span class="popup__subject">Without subject</span>
+            <span class="popup__describe">Without description </span>  
+            <button class="popup__button">ok</button>
+          </div>          
+        </div>
         <div class="information">
           <h3 class="information__title">Contact Information</h3>
           <p class="information__paragraph">Quisque hendrerit purus dapibus, ornare nibh vitae, viver&shy;ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. </p>
           <div class="information__adres">
             <div class="adres__row">
-              <a href="#">
+              <a href="#contact">
                 <span class="img-wrapper">
                   <img src="assets/icon/location@1X.png" alt="Location" class="adres__logo">
                 </span>
@@ -297,5 +304,6 @@
       </div>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
