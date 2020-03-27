@@ -1,6 +1,27 @@
 window.addEventListener('load', () => {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~HEADER~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-  let header = document.querySelector('.header');
+  let header = document.querySelector('.header'); 
+  let burgerEnable = false;
+
+  header.querySelector('.burger-menu').addEventListener('click', () => {
+    burgerActive();
+  });
+  
+  document.querySelector('.navigation').addEventListener('click', (event) => {
+    if (event.target.tagName.toLowerCase() == "a") {
+      if (burgerEnable) {
+        burgerActive();
+      }      
+    }
+  });  
+
+  function burgerActive() {
+    burgerEnable = !burgerEnable;
+    document.querySelector('.burger-menu__button').classList.toggle('burger_active'); 
+    document.querySelector('.header__navigation').classList.toggle('burger_active');   
+    document.querySelector('.burger__overlay').classList.toggle('burger_active');
+    document.querySelector('.logo').classList.toggle('burger_active');   
+  }
 
   document.addEventListener('scroll', onScroll);
 
@@ -30,6 +51,12 @@ window.addEventListener('load', () => {
   document.querySelector('.logo').addEventListener('click', (event) => {
     event.preventDefault();
   });
+
+  document.querySelector('.burger-menu__button').addEventListener('click', (event) => {
+    event.target.classList.toggle('menu_active');
+    document.querySelector('.logo').classList.toggle('logo_move');
+  });
+
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CAROUSEL~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   let phones = document.querySelectorAll('.phone');
   let carousel = document.querySelector('.carousel');
@@ -39,11 +66,7 @@ window.addEventListener('load', () => {
 
   function changeCurrentSlide(n) {
     currentSlide = (n + slides.length) % slides.length;
-    if (carousel.classList.contains('carousel_colored')) {
-      carousel.classList.remove('carousel_colored');
-    }else {
-      carousel.classList.add('carousel_colored');
-    }
+    carousel.classList.toggle('carousel_colored');
   }
 
   function hideSlide(direction) {
@@ -94,11 +117,10 @@ window.addEventListener('load', () => {
       screen.classList.toggle('screen_off');
     });
   });
-
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PORTFOLIO~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   let portfolioTages = document.querySelector('.buttons');
-  let portfolio = document.querySelector('.layout-4-column');
+  let portfolio = document.querySelector('.portfolio .layout-4-column');
   let portfolioImages = portfolio.querySelectorAll('div');  
   let arr = [];
 
@@ -119,35 +141,32 @@ window.addEventListener('load', () => {
   });
 
   function shuffleImages() {
-    portfolio.classList.add('portfolio_hidden');
-    
-    setTimeout( () => {
-      portfolioImages.forEach( item => item.classList.remove('image_active'));
+    portfolioImages.forEach( item => item.classList.remove('image_active'));
       
-      while(portfolio.firstChild) {
-        portfolio.removeChild(portfolio.firstChild);  
-      }
+    while(portfolio.firstChild) {
+      portfolio.removeChild(portfolio.firstChild);  
+    }
 
-      let currentIndex = portfolioImages.length;
-      let temporaryValue, randomIndex;
+    let currentIndex = portfolioImages.length;
+    let temporaryValue, randomIndex;
 
-      while(currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
+    while(currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
 
-        portfolio.appendChild(portfolioImages[randomIndex]);
-        temporaryValue = arr[currentIndex];
-        arr[currentIndex] = arr[randomIndex];
-        arr[randomIndex] = temporaryValue;
-      }
+      temporaryValue = arr[currentIndex];
+      arr[currentIndex] = arr[randomIndex];
+      arr[randomIndex] = temporaryValue;
+    }
 
-      arr.forEach(item => portfolio.appendChild(item));
-      portfolio.classList.remove('portfolio_hidden');
-    }, 400);
+    arr.forEach(item => {
+      item.classList.add('hidden');
+      portfolio.appendChild(item);
+      setTimeout(() => item.classList.remove('hidden'), 150);
+    });
   }
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~GET QUOTE POPUP~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
   let form = document.querySelector('.form');
   let [inputName, inputEmail, formSubject] = form.querySelectorAll('input');
   let formTextarea = form.querySelector('textarea');
@@ -194,5 +213,4 @@ window.addEventListener('load', () => {
     popup.querySelector('.popup__describe').innerText = 'Without description';
     popup.parentElement.classList.add('popup_hidden');
   });
-
 });
