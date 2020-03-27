@@ -57,9 +57,13 @@ a {
   color: inherit;
 }
 
-#home, #services, #portfolio,
+#home {
+  scroll-margin-top: 95px; 
+}
+
+#services, #portfolio,
 #about, #contact {
-  scroll-margin-top: 94.5px;
+  scroll-margin-top: 90px;
 }
 
 .wrapper {
@@ -186,26 +190,24 @@ a {
   display: none;
   position: fixed;
   z-index: 20;
-  left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.6);
 }
 
-.logo_moved {
-  position: absolute;
+.logo.burger_active {
   left: 71px;
-  top: 24px;
   z-index: 30;
 }
 
 .header__navigation.burger_active,
 .burger__overlay.burger_active {
-  display: block;
+  display: block;  
+  left: 0;
 }
 
-.burger-menu__button_active {
+.burger-menu__button.burger_active {
   transform: rotate(90deg);
 }
 
@@ -220,24 +222,32 @@ a {
     padding: 0 20px;
   }
 
+  .logo {
+    position: absolute;
+    top: 24px;
+    left: calc(50% - 44px);
+    transition: left 0.5s;
+  }
+
   .logo h1{
     font-size: 2.0rem;
   }
+
   .burger-menu {
     display: flex;
   }
 
   .header__navigation {
-    display: none;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: -100%;
+    top: 0;
     z-index: 25;
     width: 278px;
     height: 100vh;    
     background: #2d303a;
     box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
     margin: 0;
+    transition: left 0.5s;
   }
 
   .navigation {
@@ -256,9 +266,13 @@ a {
     padding: 0;
   }
 
-  #home, #services, #portfolio,
+  #home {
+    scroll-margin-top: 71px; 
+  }
+
+  #services, #portfolio,
   #about, #contact {
-    scroll-margin-top: 70.5px;
+    scroll-margin-top: 65px;
   }
 }
 
@@ -637,11 +651,18 @@ h2, h3, p {
   "a a a a";  
   grid-gap: 20px;
   width: 100%;
+  opacity: 1;
 }
 
 .project-image {
   width: 100%;
   padding-top: 85%;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.project-image.hidden {
+  opacity: 0;
 }
 
 .project-image:hover {
@@ -749,6 +770,12 @@ h2, h3, p {
   }
 }
 
+@media (max-width: 374px) {
+  .buttons__sort {
+    font-size: 1.0rem;
+  }  
+}
+
 /*~~~~~~~~~~~ABOUT US-BLOCK~~~~~~~~~~~*/
 
 .about-us {
@@ -761,7 +788,7 @@ h2, h3, p {
   justify-content: flex-start;
   align-items: flex-start;
   padding-top: 62px;
-  padding-bottom: 65px;
+  padding-bottom: 64px;
   color: #666d89;
 }
 
@@ -822,11 +849,11 @@ h2, h3, p {
 .member-contacts {
   display: flex;
   flex-direction: row;
-  height: 35px;
+  height: 36px;
 }
 
 .member-contacts img {
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
 .member-contacts img:hover {
@@ -1129,7 +1156,7 @@ textarea::placeholder {
 
 .footer .wrapper {
   flex-direction: row;
-  padding: 21px 33px 20px 42px;
+  padding: 21px 33px 19px 42px;
   font-size: 1.2rem;
   color: #5b6179; 
 }

@@ -1,27 +1,26 @@
 window.addEventListener('load', () => {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~HEADER~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-  let header = document.querySelector('.header');
-  let li = document.querySelectorAll('.navigation__item');
+  let header = document.querySelector('.header'); 
   let burgerEnable = false;
 
-  header.querySelector('.burger-menu__button').addEventListener('click', () => {
+  header.querySelector('.burger-menu').addEventListener('click', () => {
     burgerActive();
   });
-
-  li.forEach( (item) => {
-    item.addEventListener('click', () => {
+  
+  document.querySelector('.navigation').addEventListener('click', (event) => {
+    if (event.target.tagName.toLowerCase() == "a") {
       if (burgerEnable) {
         burgerActive();
-      }
-    });    
-  });
+      }      
+    }
+  });  
 
   function burgerActive() {
     burgerEnable = !burgerEnable;
-    document.querySelector('.header__navigation').classList.toggle('burger_active');
+    document.querySelector('.burger-menu__button').classList.toggle('burger_active'); 
+    document.querySelector('.header__navigation').classList.toggle('burger_active');   
     document.querySelector('.burger__overlay').classList.toggle('burger_active');
-    document.querySelector('.logo').classList.toggle('logo_moved');   
-    document.querySelector('.burger-menu__button').classList.toggle('burger-menu__button_active'); 
+    document.querySelector('.logo').classList.toggle('burger_active');   
   }
 
   document.addEventListener('scroll', onScroll);
@@ -67,11 +66,7 @@ window.addEventListener('load', () => {
 
   function changeCurrentSlide(n) {
     currentSlide = (n + slides.length) % slides.length;
-    if (carousel.classList.contains('carousel_colored')) {
-      carousel.classList.remove('carousel_colored');
-    }else {
-      carousel.classList.add('carousel_colored');
-    }
+    carousel.classList.toggle('carousel_colored');
   }
 
   function hideSlide(direction) {
@@ -159,13 +154,16 @@ window.addEventListener('load', () => {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
 
-      portfolio.appendChild(portfolioImages[randomIndex]);
       temporaryValue = arr[currentIndex];
       arr[currentIndex] = arr[randomIndex];
       arr[randomIndex] = temporaryValue;
     }
 
-    arr.forEach(item => portfolio.appendChild(item));
+    arr.forEach(item => {
+      item.classList.add('hidden');
+      portfolio.appendChild(item);
+      setTimeout(() => item.classList.remove('hidden'), 150);
+    });
   }
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~GET QUOTE POPUP~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
